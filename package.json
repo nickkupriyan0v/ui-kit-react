@@ -34,7 +34,7 @@
     "tabWidth": 4,
     "useTabs": true
   },
-  "name": "ui-kit-react",
+  "name": "@nickkupriyanov/ui-kit-react",
   "author": "nickkupriyanov",
   "module": "dist/ui-kit-react.esm.js",
   "size-limit": [
