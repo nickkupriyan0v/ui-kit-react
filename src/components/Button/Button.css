@@ -1,6 +1,30 @@
-.button {
+.nk-button {
   width: 100%;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid;
+  border: initial;
+  color: #ffffff;
+  background-color: #1ecbe1;
+  font-weight: bold;
+}
+
+.nk-button:hover {
+  cursor: pointer;
+  filter: opacity(80%);
+}
+
+.nk-button:active {
+  filter: brightness(70%);
+}
+
+.size-sm {
+  height: 30px;
+}
+
+.size-md {
+  height: 40px;
+}
+
+.size-lg {
+  height: 50px;
 }

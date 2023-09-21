@@ -1,21 +1,21 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import Button from './Button';
+import Input from './Input';
 
-const meta: Meta<typeof Button> = {
-  component: Button,
-  title: 'Marbella/Button',
+const meta: Meta<typeof Input> = {
+  component: Input,
+  title: 'Input',
   argTypes: {},
 };
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Input>;
 
 export const Primary: Story = (args: any) => (
   <div style={{ width: 200 }}>
-    <Button {...args} />
+    <Input {...args} />
   </div>
 );
 Primary.args = {
-  children: 'Primary',
+  className: 'Primary',
 };
