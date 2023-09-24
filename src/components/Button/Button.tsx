@@ -24,9 +24,9 @@ const Button = ({
 }: ButtonProps) => {
   const classNameComputed = [
     'nk-button',
-    className,
-    `size-${size}`,
-    disabled ? 'disabled' : null,
+    className || 'nk-button-default',
+    `nk-button-size-${size}`,
+    disabled ? 'nk-button-disabled' : null,
   ]
     .filter(Boolean)
     .join(' ');

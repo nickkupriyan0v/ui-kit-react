@@ -1,9 +1,11 @@
 .nk-button {
   width: 100%;
-  height: 40px;
   border-radius: 5px;
   border: initial;
   font-weight: bold;
+}
+
+.nk-button-default {
   color: #70737b;
   background-color: #e7e8ea;
 }
@@ -23,14 +25,14 @@
   filter: none !important;
 }
 
-.size-sm {
+.nk-button-size-sm {
   height: 30px;
 }
 
-.size-md {
+.nk-button-size-md {
   height: 40px;
 }
 
-.size-lg {
+.nk-button-size-lg {
   height: 50px;
 }
