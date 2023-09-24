@@ -24,6 +24,12 @@
   border-color: #1ecbe1;
 }
 
+.nk-input-box.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none !important;
+}
+
 .close-action {
   display: flex;
   align-items: center;

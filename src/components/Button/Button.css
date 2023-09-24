@@ -17,6 +17,12 @@
   filter: brightness(70%);
 }
 
+.nk-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none !important;
+}
+
 .size-sm {
   height: 30px;
 }

@@ -8,6 +8,7 @@ type InputProps = {
   size?: 'sm' | 'md' | 'lg';
   close?: boolean;
   value?: string;
+  disabled?: boolean;
   onChange?: (value: string) => void;
 };
 
@@ -18,6 +19,7 @@ const Input = ({
   value,
   size = 'md',
   type = 'text',
+  disabled = false,
   onChange,
 }: InputProps) => {
   const [focused, setFocused] = useState<boolean>(false);
@@ -27,6 +29,7 @@ const Input = ({
     className,
     focused ? 'focused' : null,
     `size-${size}`,
+    disabled ? 'disabled' : null,
   ]
     .filter(Boolean)
     .join(' ');
@@ -44,6 +47,7 @@ const Input = ({
         className="nk-input"
         placeholder={placeholder}
         type={type}
+        disabled={disabled}
         value={data}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}

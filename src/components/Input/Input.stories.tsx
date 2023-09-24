@@ -16,6 +16,4 @@ export const Primary: Story = (args: any) => (
     <Input {...args} />
   </div>
 );
-Primary.args = {
-  className: 'Primary',
-};
+Primary.args = {};
