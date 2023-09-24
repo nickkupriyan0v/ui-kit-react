@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import './Input.css';
 
 type InputProps = {
@@ -10,7 +10,7 @@ type InputProps = {
   value?: string;
   disabled?: boolean;
   name?: string;
-  onChange?: (value: string) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input = ({
@@ -36,10 +36,10 @@ const Input = ({
     .filter(Boolean)
     .join(' ');
 
-  const change: (value: string) => void = value => {
-    setData(value);
+  const change: (event: ChangeEvent<HTMLInputElement>) => void = event => {
+    setData(event.target.value);
     if (onChange) {
-      onChange(value);
+      onChange(event);
     }
   };
 
@@ -54,13 +54,9 @@ const Input = ({
         name={name}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        onChange={e => change(e.target.value)}
+        onChange={e => change(e)}
       ></input>
-      {clear && data && (
-        <span className="close-action" onClick={() => change('')}>
-          ✕
-        </span>
-      )}
+      {clear && data && <span className="close-action">✕</span>}
     </div>
   );
 };
