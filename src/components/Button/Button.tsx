@@ -18,12 +18,14 @@ const Button = ({
   className,
   style,
   size = 'md',
+  type = 'primary',
   disabled = false,
   onClick,
 }: ButtonProps) => {
   const classNameComputed = [
     'nk-button',
     className,
+    `nk-button-${type}`,
     `size-${size}`,
     disabled ? 'disabled' : null,
   ]

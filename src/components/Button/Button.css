@@ -3,8 +3,6 @@
   height: 40px;
   border-radius: 5px;
   border: initial;
-  color: #ffffff;
-  background-color: #1ecbe1;
   font-weight: bold;
 }
 
@@ -21,6 +19,16 @@
   opacity: 0.5;
   cursor: not-allowed;
   filter: none !important;
+}
+
+.nk-button.nk-button-primary {
+  color: #ffffff;
+  background-color: #1ecbe1;
+}
+
+.nk-button.nk-button-secondary {
+  color: #70737b;
+  background-color: #e7e8ea;
 }
 
 .size-sm {
