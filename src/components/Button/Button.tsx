@@ -7,7 +7,7 @@ type ButtonProps = {
   type?: 'primary' | 'secondary';
   className?: string;
   size?: 'sm' | 'md' | 'lg';
-  disabled: boolean;
+  disabled?: boolean;
   onClick?: () => void;
   style?: CSSProperties;
 };

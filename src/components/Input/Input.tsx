@@ -6,7 +6,7 @@ type InputProps = {
   placeholder?: string;
   type?: 'text' | 'password';
   size?: 'sm' | 'md' | 'lg';
-  close?: boolean;
+  clear?: boolean;
   value?: string;
   disabled?: boolean;
   onChange?: (value: string) => void;
@@ -15,7 +15,7 @@ type InputProps = {
 const Input = ({
   className,
   placeholder,
-  close,
+  clear,
   value,
   size = 'md',
   type = 'text',
@@ -53,7 +53,7 @@ const Input = ({
         onBlur={() => setFocused(false)}
         onChange={e => change(e.target.value)}
       ></input>
-      {close && data && (
+      {clear && data && (
         <span className="close-action" onClick={() => change('')}>
           ✕
         </span>
