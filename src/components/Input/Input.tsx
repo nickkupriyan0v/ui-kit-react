@@ -7,6 +7,7 @@ type InputProps = {
   type?: 'text' | 'password';
   size?: 'sm' | 'md' | 'lg';
   close?: boolean;
+  value?: string;
   onChange?: (value: string) => void;
 };
 
@@ -14,12 +15,13 @@ const Input = ({
   className,
   placeholder,
   close,
+  value,
   size = 'md',
   type = 'text',
   onChange,
 }: InputProps) => {
   const [focused, setFocused] = useState<boolean>(false);
-  const [value, setValue] = useState<string>('');
+  const [data, setData] = useState<string | undefined>(value);
   const computedClass = [
     'nk-input-box',
     className,
@@ -30,7 +32,7 @@ const Input = ({
     .join(' ');
 
   const change: (value: string) => void = value => {
-    setValue(value);
+    setData(value);
     if (onChange) {
       onChange(value);
     }
@@ -42,12 +44,12 @@ const Input = ({
         className="nk-input"
         placeholder={placeholder}
         type={type}
-        value={value}
+        value={data}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChange={e => change(e.target.value)}
       ></input>
-      {close && value && (
+      {close && data && (
         <span className="close-action" onClick={() => change('')}>
           ✕
         </span>
