@@ -9,6 +9,7 @@ type InputProps = {
   clear?: boolean;
   value?: string;
   disabled?: boolean;
+  name?: string;
   onChange?: (value: string) => void;
 };
 
@@ -20,6 +21,7 @@ const Input = ({
   size = 'md',
   type = 'text',
   disabled = false,
+  name,
   onChange,
 }: InputProps) => {
   const [focused, setFocused] = useState<boolean>(false);
@@ -49,6 +51,7 @@ const Input = ({
         type={type}
         disabled={disabled}
         value={data}
+        name={name}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChange={e => change(e.target.value)}
