@@ -17,5 +17,9 @@ export const Primary: Story = (args: any) => (
   </div>
 );
 Primary.args = {
-  children: 'Primary',
+  children: 'Кнопка',
+  style: {
+    color: 'red',
+    backgroundColor: 'blue',
+  },
 };

@@ -4,6 +4,8 @@
   border-radius: 5px;
   border: initial;
   font-weight: bold;
+  color: #70737b;
+  background-color: #e7e8ea;
 }
 
 .nk-button:hover {
@@ -19,16 +21,6 @@
   opacity: 0.5;
   cursor: not-allowed;
   filter: none !important;
-}
-
-.nk-button.nk-button-primary {
-  color: #ffffff;
-  background-color: #1ecbe1;
-}
-
-.nk-button.nk-button-secondary {
-  color: #70737b;
-  background-color: #e7e8ea;
 }
 
 .size-sm {

@@ -3,29 +3,28 @@ import './Button.css';
 
 type ButtonProps = {
   children: ReactNode;
-  key?: Key;
-  type?: 'primary' | 'secondary';
-  className?: string;
+  type?: 'button' | 'submit' | 'reset';
   size?: 'sm' | 'md' | 'lg';
+  className?: string;
+  key?: Key;
   disabled?: boolean;
-  onClick?: () => void;
   style?: CSSProperties;
+  onClick?: () => void;
 };
 
 const Button = ({
   children,
-  key,
-  className,
-  style,
+  type = 'button',
   size = 'md',
-  type = 'primary',
+  className,
+  key,
   disabled = false,
+  style,
   onClick,
 }: ButtonProps) => {
   const classNameComputed = [
     'nk-button',
     className,
-    `nk-button-${type}`,
     `size-${size}`,
     disabled ? 'disabled' : null,
   ]
@@ -34,6 +33,7 @@ const Button = ({
 
   return (
     <button
+      type={type}
       disabled={disabled}
       style={style}
       key={key}
