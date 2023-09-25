@@ -29,13 +29,11 @@
 }
 
 .modal-content {
-  height: 300px;
-  width: 500px;
-  border: 1px solid black;
+  min-height: 100px;
+  min-width: 100px;
   border-radius: 5px;
-  background-color: #fff;
-  color: black;
   padding: 16px;
   transform: translateY(-100px);
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.46);
 }

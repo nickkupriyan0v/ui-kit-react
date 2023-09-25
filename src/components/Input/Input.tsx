@@ -56,7 +56,11 @@ const Input = ({
         onBlur={() => setFocused(false)}
         onChange={e => change(e)}
       ></input>
-      {clear && data && <span className="close-action">✕</span>}
+      {clear && data && (
+        <span className="close-action" onClick={() => setData('')}>
+          ✕
+        </span>
+      )}
     </div>
   );
 };
