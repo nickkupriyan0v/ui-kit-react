@@ -43,7 +43,7 @@ const Textarea: FC<TextareaProps> = ({
   };
 
   useEffect(() => {
-    if (textAreaRef?.current) {
+    if (textAreaRef.current) {
       textAreaRef.current.style.height = minHeight + 'px';
       const scrollHeight = textAreaRef.current.scrollHeight;
       if (scrollHeight > maxHeight) {
