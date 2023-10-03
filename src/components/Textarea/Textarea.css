@@ -1,0 +1,39 @@
+.nk-textarea-box {
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #21262a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nk-textarea-box.focused {
+  border-color: #1ecbe1;
+}
+
+.nk-textarea-box.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none !important;
+}
+
+.close-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+}
+
+.close-action:hover {
+  cursor: pointer;
+}
+
+.nk-textarea {
+  outline: initial;
+  border: initial;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: initial;
+}
