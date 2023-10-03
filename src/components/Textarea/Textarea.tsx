@@ -38,8 +38,7 @@ const Textarea: FC<TextareaProps> = ({
     .join(' ');
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const val = event.target?.value;
-    setData(val);
+    setData(event.target.value);
     onChange && onChange(event);
   };
 
