@@ -13,7 +13,7 @@ type TextareaProps = {
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
-const Textarea: FC<TextareaProps> = ({
+const Textarea = ({
   name,
   id,
   placeholder,
@@ -23,7 +23,7 @@ const Textarea: FC<TextareaProps> = ({
   onChange,
   minHeight = 60,
   maxHeight = 120,
-}) => {
+}: TextareaProps) => {
   const [focused, setFocused] = useState<boolean>(false);
   const [data, setData] = useState(value);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
