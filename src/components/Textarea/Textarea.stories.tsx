@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import Textarea from './Textarea';
 
@@ -11,9 +11,23 @@ export default meta;
 
 type Story = StoryObj<typeof Textarea>;
 
-export const Primary: Story = (args: any) => (
-  <div style={{ width: 200 }}>
-    <Textarea {...args} />
-  </div>
-);
+export const Primary: Story = (args: any) => {
+  const [state, setState] = useState('');
+
+  const reset = () => {
+    setState('');
+  };
+
+  const onChange = (e: any) => {
+    setState(e.target.value);
+  };
+
+  return (
+    <div style={{ width: 200 }}>
+      <Textarea {...args} value={state} onChange={onChange} />
+      <p>{state}</p>
+      <button onClick={reset}>reset</button>
+    </div>
+  );
+};
 Primary.args = {};

@@ -24,8 +24,8 @@ const Textarea = ({
   minHeight = 60,
   maxHeight = 120,
 }: TextareaProps) => {
+  const [data, setData] = useState<string>();
   const [focused, setFocused] = useState<boolean>(false);
-  const [data, setData] = useState(value);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const classes = [
@@ -41,6 +41,10 @@ const Textarea = ({
     setData(event.target.value);
     onChange && onChange(event);
   };
+
+  useEffect(() => {
+    setData(value);
+  }, [value]);
 
   useEffect(() => {
     if (textAreaRef.current) {
