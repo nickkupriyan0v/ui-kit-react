@@ -1,5 +1,6 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import './Input.css';
+import Loader from '../Loader/Loader';
 
 type InputProps = {
   className?: string;
@@ -10,6 +11,7 @@ type InputProps = {
   value?: string;
   disabled?: boolean;
   name?: string;
+  showLoader?: boolean;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -22,15 +24,21 @@ const Input = ({
   type = 'text',
   disabled = false,
   name,
+  showLoader,
   onChange,
 }: InputProps) => {
   const [focused, setFocused] = useState<boolean>(false);
   const [data, setData] = useState<string | undefined>(value);
+
+  useEffect(() => {
+    setData(value);
+  }, [value]);
+
   const computedClass = [
     'nk-input-box',
     className,
     focused ? 'focused' : null,
-    `size-${size}`,
+    `input-size-${size}`,
     disabled ? 'disabled' : null,
   ]
     .filter(Boolean)
@@ -61,6 +69,7 @@ const Input = ({
           ✕
         </span>
       )}
+      {showLoader && <Loader size="sm" className="inputLoader" />}
     </div>
   );
 };

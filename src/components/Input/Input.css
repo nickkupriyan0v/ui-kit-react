@@ -6,17 +6,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.size-sm {
+.input-size-sm {
   height: 30px;
 }
 
-.size-md {
+.input-size-md {
   height: 40px;
 }
 
-.size-lg {
+.input-size-lg {
   height: 50px;
 }
 
@@ -35,6 +36,7 @@
   align-items: center;
   justify-content: center;
   margin-left: 4px;
+  z-index: 1;
 }
 
 .close-action:hover {
@@ -48,4 +50,9 @@
   width: 100%;
   height: 100%;
   background-color: initial;
+}
+
+.inputLoader {
+  position: absolute;
+  right: 16px;
 }
