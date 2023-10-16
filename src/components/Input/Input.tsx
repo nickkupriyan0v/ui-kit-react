@@ -13,6 +13,7 @@ type InputProps = {
   name?: string;
   showLoader?: boolean;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: any;
 };
 
 const Input = ({
@@ -26,6 +27,7 @@ const Input = ({
   name,
   showLoader,
   onChange,
+  onFocus,
 }: InputProps) => {
   const [focused, setFocused] = useState<boolean>(false);
   const [data, setData] = useState<string | undefined>(value);
@@ -51,6 +53,11 @@ const Input = ({
     }
   };
 
+  const hadleFocus = () => {
+    setFocused(true);
+    onFocus && onFocus();
+  };
+
   return (
     <div className={computedClass}>
       <input
@@ -60,7 +67,7 @@ const Input = ({
         disabled={disabled}
         value={data}
         name={name}
-        onFocus={() => setFocused(true)}
+        onFocus={hadleFocus}
         onBlur={() => setFocused(false)}
         onChange={e => change(e)}
       ></input>
